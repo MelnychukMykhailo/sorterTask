@@ -15,7 +15,7 @@ import java.util.List;
      * Implement in single class.
      */
     public class DateSorter {
-        /**
+       /**
          * The implementation of this method should sort dates.     *
          * The output should be in the following order:
          * Dates with an 'r' in the month,
@@ -31,28 +31,28 @@ import java.util.List;
          * @param unsortedDates - an unsorted list of dates
          * @return the collection of dates now sorted as per the spec
          */
-        public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
-            // my solution here
-            List<LocalDate> datesWithR = new ArrayList<>();
-            List<LocalDate> datesWithoutR = new ArrayList<>();
+      public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
+           // my solution here
+          List<LocalDate> datesWithR = new ArrayList<>();
+          List<LocalDate> datesWithoutR = new ArrayList<>();
 
-            for (LocalDate date : unsortedDates) {
-                if (date.getMonth().name().toLowerCase().contains("r")) {
-                    datesWithR.add(date);
-                } else {
-                    datesWithoutR.add(date);
-                }
-            }
+          for (LocalDate date : unsortedDates) {
+              if (date.getMonth().name().toLowerCase().contains("r")) {
+                  datesWithR.add(date);
+              } else {
+                  datesWithoutR.add(date);
+              }
+          }
 
-            // Sort dates
-            datesWithR.sort(Comparator.naturalOrder());
-            datesWithoutR.sort(Comparator.reverseOrder());
+           // Sort dates
+          datesWithR.sort(Comparator.naturalOrder());
+          datesWithoutR.sort(Comparator.reverseOrder());
 
-            // Combine the lists.
-            List<LocalDate> sortedDates = new ArrayList<>(datesWithR);
-            sortedDates.addAll(datesWithoutR);
+           // Combine the lists.
+          List<LocalDate> sortedDates = new ArrayList<>(datesWithR);
+          sortedDates.addAll(datesWithoutR);
 
-            return sortedDates;
-        }
-    }
+          return sortedDates;
+      }
+ }
 
